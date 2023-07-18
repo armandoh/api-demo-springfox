@@ -1,0 +1,23 @@
+server:
+  servlet:
+    context-path: /phone-service
+  port: 8081
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:phones_db
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    defer-datasource-initialization: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
